@@ -49,7 +49,7 @@ extension SKAction {
         configure(node)
       } else {
         if let node = node as? SKShapeNode {
-          node.fillColor = transColor
+            node.fillColor = .white
         }
 
         if let label = node as? SKMultilineLabelNode {
