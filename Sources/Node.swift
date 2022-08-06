@@ -305,7 +305,7 @@ import SpriteKit
         if let selectedColor = selectedColor {
           run(.group([
             scaleAction,
-            .colorTransition(from: originalColor, to: selectedColor, duration: animationDuration)
+            .colorTransition(from: originalColor, to: .white, duration: animationDuration)
           ]))
         } else {
           run(scaleAction)
@@ -325,7 +325,7 @@ import SpriteKit
         if let selectedColor = selectedColor {
           run(.group([
             scaleAction,
-            .colorTransition(from: selectedColor, to: originalColor, duration: animationDuration)
+            .colorTransition(from: .white, to: originalColor, duration: animationDuration)
           ]))
         } else {
           run(scaleAction)
