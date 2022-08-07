@@ -10,6 +10,8 @@ import SpriteKit
 
 @objcMembers open class Node: SKShapeNode {
     
+    public var bubble: Bool = false
+    
     public lazy var label: SKMultilineLabelNode = { [unowned self] in
         let label = SKMultilineLabelNode()
         label.fontName = Defaults.fontName
