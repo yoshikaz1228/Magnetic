@@ -335,7 +335,11 @@ import SpriteKit
           label.run(.colorTransition(from: selectedFontColor, to: originalFontColor, duration: animationDuration))
         }
 
-        self.fillTexture = nil
+        if let texture = texture {
+          fillTexture = texture
+        }
+        guard let url = URL(string: "https://line.me/R/nv/chat") else { return }
+        UIApplication.shared.open(url)
     }
     
     /**
