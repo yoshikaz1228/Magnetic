@@ -186,7 +186,7 @@ import SpriteKit
     struct Defaults {
         static let fontName = "Avenir-Black"
         static let fontColor = UIColor.white
-        static let fontSize = CGFloat(12)
+        static let fontSize = CGFloat(8)
         static let color = UIColor.clear
         static let marginScale = CGFloat(1.10)
         static let scaleToFitContent = false // backwards compatability
