@@ -320,17 +320,6 @@ import SpriteKit
      The animation to execute when the node is deselected.
      */
     open func deselectedAnimation() {
-        let scaleAction = SKAction.scale(to: deselectedScale, duration: animationDuration)
-        
-        if let selectedColor = selectedColor {
-          run(.group([
-            scaleAction,
-            .colorTransition(from: .white, to: originalColor, duration: animationDuration)
-          ]))
-        } else {
-          run(scaleAction)
-        }
-        
         if let selectedFontColor = selectedFontColor {
           label.run(.colorTransition(from: selectedFontColor, to: originalFontColor, duration: animationDuration))
         }
