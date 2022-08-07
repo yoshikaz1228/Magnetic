@@ -78,7 +78,7 @@ import SpriteKit
     }
     
     func commonInit() {
-        backgroundColor = .white
+        backgroundColor = .clear
         scaleMode = .aspectFill
         accessibilityContainerType = .list
         configure()
