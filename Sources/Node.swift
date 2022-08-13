@@ -10,6 +10,8 @@ import SpriteKit
 
 @objcMembers open class Node: SKShapeNode {
     
+    private var bubble: Bool = false
+    
     public lazy var label: SKMultilineLabelNode = { [unowned self] in
         let label = SKMultilineLabelNode()
         label.fontName = Defaults.fontName
@@ -213,6 +215,7 @@ import SpriteKit
         configure(text: text, image: image, color: color)
         self.isAccessibilityElement = true
         self.shouldGroupAccessibilityChildren = true
+        self.bubble = true
     }
     
     /**
@@ -348,5 +351,13 @@ import SpriteKit
     open func removedAnimation(completion: @escaping () -> Void) {
         run(.group([.fadeOut(withDuration: animationDuration), .scale(to: 0, duration: animationDuration)]), completion: completion)
     }
+    
+    /**
+        Check for The node is Bubble Node.
+     */
+    open func isBubble() -> Bool {
+        return self.bubble
+    }
+    
     
 }
