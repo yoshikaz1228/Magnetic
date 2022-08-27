@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import UIKit
 import Magnetic
 
 struct MagneticSwiftUI: UIViewRepresentable {
@@ -17,10 +16,9 @@ struct MagneticSwiftUI: UIViewRepresentable {
         let bounds = UIScreen.main.bounds
         
         let magneticView = MagneticView(frame: bounds)
-        let magnetic = magneticView.magnetic
         for node in nodes {
             node.setBubble(bubble: true)
-            magnetic.addChild(node)
+            magneticView.magnetic.addChild(node)
         }
         return magneticView
     }

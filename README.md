@@ -32,6 +32,8 @@ $ pod try Magnetic
 
 ## Usage
 
+### UIKit
+
 A `Magnetic` object is an [SKScene](https://developer.apple.com/reference/spritekit/skscene).
 
 To display, you present it from an [SKView](https://developer.apple.com/reference/spritekit/skview) object.
@@ -53,6 +55,67 @@ class ViewController: UIViewController {
 
 }
 ```
+
+### Swift UI
+
+Step1. Make ViewController wrapper in your project like MagneticSwiftUI.swift in ExampleSwiftUI.
+
+```swift
+import SwiftUI
+import Magnetic
+
+struct MagneticSwiftUI: UIViewRepresentable {
+    
+    @Binding var nodes: [Node]
+    
+    func makeUIView(context: Context) -> MagneticView {
+        let bounds = UIScreen.main.bounds
+        
+        let magneticView = MagneticView(frame: bounds)
+        for node in nodes {
+            node.setBubble(bubble: true)
+            magneticView.magnetic.addChild(node)
+        }
+        return magneticView
+    }
+    
+    func updateUIView(_ uiView: MagneticView, context: Context) {
+        for child in uiView.magnetic.children {
+            if let node = child as? Node {
+                if(node.isBubble()) {
+                    child.removeFromParent()
+                }
+            }
+        }
+        
+        for node in nodes {
+            uiView.magnetic.addChild(node)
+        }
+    }
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+    
+    class Coordinator {
+        
+    }
+}
+```
+
+Step2. Use Magnetic in swiftUI.
+
+```swift
+    @State var nodes: [Node] = []
+    
+    var body: some View {
+        MagneticSwiftUI(nodes: $nodes).onAppear {
+            nodes.append(Node(text: "Italy", image: UIImage(named: "italy"), color: .red, radius: 30))
+        }
+    }
+```
+
+You can update nodes variable and wrapper updates view automatically.
 
 #### Properties
 

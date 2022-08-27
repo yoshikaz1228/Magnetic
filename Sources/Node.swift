@@ -353,12 +353,15 @@ import SpriteKit
     }
     
     /**
-        Check for The node is Bubble Node.
+        Check for the node is Bubble node.
      */
     open func isBubble() -> Bool {
         return self.bubble
     }
     
+    /**
+        Set the node is Bubble node.
+     */
     open func setBubble(bubble: Bool) {
         self.bubble = bubble
     }
