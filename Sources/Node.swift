@@ -359,5 +359,9 @@ import SpriteKit
         return self.bubble
     }
     
+    open func setBubble(bubble: Bool) {
+        self.bubble = bubble
+    }
+    
     
 }

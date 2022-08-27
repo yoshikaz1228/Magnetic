@@ -7,11 +7,15 @@
 //
 
 import SwiftUI
+import Magnetic
 
 struct ContentView: View {
+    @State var nodes: [Node] = []
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        MagneticSwiftUI(nodes: $nodes).onAppear {
+            nodes.append(Node(text: "Italy", image: UIImage(named: "italy"), color: .red, radius: 30))
+        }
     }
 }
 

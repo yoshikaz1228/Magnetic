@@ -11,6 +11,7 @@
 		4E19167528A00A7C00A2C98D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E19167428A00A7C00A2C98D /* ContentView.swift */; };
 		4E19167728A00A7D00A2C98D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E19167628A00A7D00A2C98D /* Assets.xcassets */; };
 		4E19167A28A00A7D00A2C98D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E19167928A00A7D00A2C98D /* Preview Assets.xcassets */; };
+		4EC61BCA28A7813800BA7D1C /* MagneticSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC61BC928A7813800BA7D1C /* MagneticSwiftUI.swift */; };
 		71835A711EC44BC100782066 /* SKMultilineLabelNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71835A701EC44BC100782066 /* SKMultilineLabelNode.swift */; };
 		71E1B90A1FD7ECEB000E73A6 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 71E1B9071FD7ECEA000E73A6 /* README.md */; };
 		71E1B90B1FD7ECEB000E73A6 /* Magnetic.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 71E1B9081FD7ECEA000E73A6 /* Magnetic.podspec */; };
@@ -51,7 +52,6 @@
 		8B6AA4721E873E1700909A36 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AA4711E873E1700909A36 /* Extensions.swift */; };
 		95899B5A24333EEA00F2490D /* SKAction+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95899B5924333EEA00F2490D /* SKAction+Color.swift */; };
 		C07CDB0C284ECB020000CF0E /* MagneticView+Accessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07CDB0B284ECB020000CF0E /* MagneticView+Accessibility.swift */; };
-		F41069572738FD8C00AE220B /* MagneticView+SwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41069562738FD8C00AE220B /* MagneticView+SwiftUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +84,7 @@
 		4E19167428A00A7C00A2C98D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4E19167628A00A7D00A2C98D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E19167928A00A7D00A2C98D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4EC61BC928A7813800BA7D1C /* MagneticSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagneticSwiftUI.swift; sourceTree = "<group>"; };
 		71835A701EC44BC100782066 /* SKMultilineLabelNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKMultilineLabelNode.swift; sourceTree = "<group>"; };
 		71E1B9071FD7ECEA000E73A6 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		71E1B9081FD7ECEA000E73A6 /* Magnetic.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Magnetic.podspec; sourceTree = "<group>"; };
@@ -126,7 +127,6 @@
 		8B6AA4711E873E1700909A36 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		95899B5924333EEA00F2490D /* SKAction+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKAction+Color.swift"; sourceTree = "<group>"; };
 		C07CDB0B284ECB020000CF0E /* MagneticView+Accessibility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagneticView+Accessibility.swift"; sourceTree = "<group>"; };
-		F41069562738FD8C00AE220B /* MagneticView+SwiftUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MagneticView+SwiftUI.swift"; sourceTree = "<group>"; };
 		F4AD375C2499EB8F00EEAED4 /* Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Example.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +166,7 @@
 		4E19167128A00A7C00A2C98D /* ExampleSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				4EC61BC928A7813800BA7D1C /* MagneticSwiftUI.swift */,
 				4E19167228A00A7C00A2C98D /* ExampleSwiftUIApp.swift */,
 				4E19167428A00A7C00A2C98D /* ContentView.swift */,
 				4E19167628A00A7D00A2C98D /* Assets.xcassets */,
@@ -180,6 +181,13 @@
 				4E19167928A00A7D00A2C98D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4E52B99C28B9FA9100FA48F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8B170CE11E8B2858005F45AB /* Fonts */ = {
@@ -221,6 +229,7 @@
 				8B6914CB1E70F6B50007896C /* Example */,
 				4E19167128A00A7C00A2C98D /* ExampleSwiftUI */,
 				8B6914BC1E70F6A90007896C /* Products */,
+				4E52B99C28B9FA9100FA48F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,7 +254,6 @@
 				8B61070B1E876D13000FF664 /* Node.swift */,
 				71835A701EC44BC100782066 /* SKMultilineLabelNode.swift */,
 				95899B5924333EEA00F2490D /* SKAction+Color.swift */,
-				F41069562738FD8C00AE220B /* MagneticView+SwiftUI.swift */,
 				C07CDB0B284ECB020000CF0E /* MagneticView+Accessibility.swift */,
 			);
 			name = Magnetic;
@@ -441,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EC61BCA28A7813800BA7D1C /* MagneticSwiftUI.swift in Sources */,
 				4E19167528A00A7C00A2C98D /* ContentView.swift in Sources */,
 				4E19167328A00A7C00A2C98D /* ExampleSwiftUIApp.swift in Sources */,
 			);
@@ -450,7 +459,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F41069572738FD8C00AE220B /* MagneticView+SwiftUI.swift in Sources */,
 				8B170D0E1E8B2FAD005F45AB /* MagneticView.swift in Sources */,
 				C07CDB0C284ECB020000CF0E /* MagneticView+Accessibility.swift in Sources */,
 				8B6914DD1E70F6CF0007896C /* Magnetic.swift in Sources */,

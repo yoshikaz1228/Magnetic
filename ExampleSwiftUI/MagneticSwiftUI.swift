@@ -1,26 +1,26 @@
 //
-//  ContentView.swift
-//  Magnetic
+//  MagneticSwiftUI.swift
+//  ExampleSwiftUI
 //
-//  Created by Yoshikaz Matsubara on 2022/08/07.
-//  Copyright © 2022 efremidze. All rights reserved.
+//  Created by Yoshikaz Matsubara on 2022/08/13.
 //
 
 import SwiftUI
 import UIKit
+import Magnetic
 
-struct MagneticViewController: UIViewRepresentable {
+struct MagneticSwiftUI: UIViewRepresentable {
     
     @Binding var nodes: [Node]
     
     func makeUIView(context: Context) -> MagneticView {
         let bounds = UIScreen.main.bounds
-        let width = Int(bounds.width)
-        let height = Int(bounds.height)
         
-        let magneticView = MagneticView(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        let magneticView = MagneticView(frame: bounds)
+        let magnetic = magneticView.magnetic
         for node in nodes {
-            magneticView.magnetic.addChild(node)
+            node.setBubble(bubble: true)
+            magnetic.addChild(node)
         }
         return magneticView
     }
