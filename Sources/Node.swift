@@ -40,8 +40,8 @@ import SpriteKit
      */
     open var image: UIImage? {
         didSet {
-//            let url = URL(string: "https://picsum.photos/1200/600")!
-//            let image = UIImage(data: try! Data(contentsOf: url))
+            //            let url = URL(string: "https://picsum.photos/1200/600")!
+            //            let image = UIImage(data: try! Data(contentsOf: url))
             texture = image.map { SKTexture(image: $0.aspectFill(self.frame.size)) }
         }
     }
@@ -74,12 +74,12 @@ import SpriteKit
             }
         }
     }
-
+    
     /**
      The internal accessibilityPath used by the node.
      */
     private var overridenAccessibilityPath: UIBezierPath?
-
+    
     open override var accessibilityPath: UIBezierPath? {
         get { overridenAccessibilityPath ?? UIBezierPath(ovalIn: self.accessibilityFrame) }
         set { self.overridenAccessibilityPath = newValue }
@@ -102,32 +102,32 @@ import SpriteKit
             resize()
         }
     }
-  
+    
     /**
      The scale of the selected animation
-    */
+     */
     open var selectedScale: CGFloat = 4 / 3
-  
+    
     /**
      The scale of the deselected animation
-    */
+     */
     open var deselectedScale: CGFloat = 1
-
+    
     /**
      The original color of the node before animation
-    */
+     */
     private var originalColor: UIColor = Defaults.color
-  
+    
     /**
      The color of the seleted node
-    */
+     */
     open var selectedColor: UIColor?
-  
+    
     /**
      The text color of the seleted node
-    */
+     */
     open var selectedFontColor: UIColor?
-  
+    
     /**
      The original text color of the node before animation
      */
@@ -137,45 +137,45 @@ import SpriteKit
      The duration of the selected/deselected animations
      */
     open var animationDuration: TimeInterval = 0.2
-  
+    
     /**
      The name of the label's font
-    */
+     */
     open var fontName: String {
-      get { label.fontName ?? Defaults.fontName }
-      set {
-        label.fontName = newValue
-        resize()
-      }
+        get { label.fontName ?? Defaults.fontName }
+        set {
+            label.fontName = newValue
+            resize()
+        }
     }
     
     /**
      The size of the label's font
-    */
+     */
     open var fontSize: CGFloat {
-      get { label.fontSize }
-      set {
-        label.fontSize = newValue
-        resize()
-      }
+        get { label.fontSize }
+        set {
+            label.fontSize = newValue
+            resize()
+        }
     }
     
     /**
      The color of the label's font
-    */
+     */
     open var fontColor: UIColor {
-      get { label.fontColor ?? Defaults.fontColor }
-      set { label.fontColor = newValue }
+        get { label.fontColor ?? Defaults.fontColor }
+        set { label.fontColor = newValue }
     }
     
     /**
      The margin scale of the node
      */
     open var marginScale: CGFloat = Defaults.marginScale {
-      didSet {
-        guard let path = path else { return }
-        regeneratePhysicsBody(withPath: path)
-      }
+        didSet {
+            guard let path = path else { return }
+            regeneratePhysicsBody(withPath: path)
+        }
     }
     
     open private(set) var radius: CGFloat?
@@ -197,11 +197,11 @@ import SpriteKit
      Creates a node with a custom path.
      
      - Parameters:
-        - text: The text of the node.
-        - image: The image of the node.
-        - color: The color of the node.
-        - path: The path of the node.
-        - marginScale: The margin scale of the node.
+     - text: The text of the node.
+     - image: The image of the node.
+     - color: The color of the node.
+     - path: The path of the node.
+     - marginScale: The margin scale of the node.
      
      - Returns: A new node.
      */
@@ -221,11 +221,11 @@ import SpriteKit
      Creates a node with a circular path.
      
      - Parameters:
-        - text: The text of the node.
-        - image: The image of the node.
-        - color: The color of the node.
-        - radius: The radius of the node.
-        - marginScale: The margin scale of the node.
+     - text: The text of the node.
+     - image: The image of the node.
+     - color: The color of the node.
+     - radius: The radius of the node.
+     - marginScale: The margin scale of the node.
      
      - Returns: A new node.
      */
@@ -265,9 +265,9 @@ import SpriteKit
     /**
      Updates the radius of the node and sets the label width to a given width or the radius
      
-      - Parameters:
-        - radius: The new radius
-        - withLabelWidth: A custom width for the text label
+     - Parameters:
+     - radius: The new radius
+     - withLabelWidth: A custom width for the text label
      */
     public func update(radius: CGFloat, withLabelWidth width: CGFloat? = nil) {
         guard let path = SKShapeNode(circleOfRadius: radius).path else { return }
@@ -282,12 +282,12 @@ import SpriteKit
      */
     public func regeneratePhysicsBody(withPath path: CGPath) {
         self.physicsBody = {
-          var transform = CGAffineTransform.identity.scaledBy(x: marginScale, y: marginScale)
-          let body = SKPhysicsBody(polygonFrom: path.copy(using: &transform)!)
-          body.allowsRotation = false
-          body.friction = 0
-          body.linearDamping = 3
-          return body
+            var transform = CGAffineTransform.identity.scaledBy(x: marginScale, y: marginScale)
+            let body = SKPhysicsBody(polygonFrom: path.copy(using: &transform)!)
+            body.allowsRotation = false
+            body.friction = 0
+            body.linearDamping = 3
+            return body
         }()
     }
     
@@ -305,16 +305,16 @@ import SpriteKit
         }
         
         if let selectedColor = selectedColor {
-          run(.group([
-            scaleAction,
-            .colorTransition(from: originalColor, to: .white, duration: animationDuration)
-          ]))
+            run(.group([
+                scaleAction,
+                .colorTransition(from: originalColor, to: .white, duration: animationDuration)
+            ]))
         } else {
-          run(scaleAction)
+            run(scaleAction)
         }
-
+        
         if let texture = texture {
-          fillTexture = texture
+            fillTexture = texture
         }
     }
     
@@ -323,11 +323,11 @@ import SpriteKit
      */
     open func deselectedAnimation() {
         if let selectedFontColor = selectedFontColor {
-          label.run(.colorTransition(from: selectedFontColor, to: originalFontColor, duration: animationDuration))
+            label.run(.colorTransition(from: selectedFontColor, to: originalFontColor, duration: animationDuration))
         }
-
+        
         if let texture = texture {
-          fillTexture = texture
+            fillTexture = texture
         }
         guard let url = URL(string: "https://line.me/R/nv/chat") else { return }
         UIApplication.shared.open(url)
@@ -342,6 +342,20 @@ import SpriteKit
      */
     open func removedAnimation(completion: @escaping () -> Void) {
         run(.group([.fadeOut(withDuration: animationDuration), .scale(to: 0, duration: animationDuration)]), completion: completion)
+    }
+    
+    /**
+     Check for the node is Bubble node.
+     */
+    open func isBubble() -> Bool {
+        return self.bubble
+    }
+    
+    /**
+     Set the node is Bubble node.
+     */
+    open func setBubble(bubble: Bool) {
+        self.bubble = bubble
     }
     
 }
